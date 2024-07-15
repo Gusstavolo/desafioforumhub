@@ -1,6 +1,7 @@
 package com.guoliveira.demo.topico;
 
 import com.guoliveira.demo.curso.Curso;
+import com.guoliveira.demo.usuario.Usuario;
 import jakarta.persistence.*;
 import lombok.*;
 import org.springframework.data.jpa.domain.support.AuditingEntityListener;
@@ -47,13 +48,13 @@ public class Topico {
         this.usuario = dTOCriaTopico.usuario();
     }
     public void atualizaTopico(DTOAtualizaTopico atualizaTopico) {
-        if (DTOAtualizaTopico.titulo() != null){
+        if (atualizaTopico.titulo() != null){
             this.titulo = atualizaTopico.titulo();
         }
-        if (DTOAtualizaTopico.mensagem() != null){
+        if (atualizaTopico.mensagem() != null){
             this.mensagem = atualizaTopico.mensagem();
         }
-        if (DTOAtualizaTopico.curso() != null){
+        if (atualizaTopico.curso() != null){
             this.curso = atualizaTopico.curso();
         }
     }
